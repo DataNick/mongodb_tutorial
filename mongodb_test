@@ -1,0 +1,2 @@
+use wands #creates a db called wands
+db.wands.find() #finds all items in wands database
