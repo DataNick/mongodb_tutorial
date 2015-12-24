@@ -20,9 +20,13 @@ update parameter (begin with a $)
 
 db.wands.update(
 {name: "Love"},
-"$set": {price: 9.99})
+"$set": {price: 9.99},
+{"multi": false (by default)})
+
+#to perform multiple updates, include third parameter (options parameter)
 
 #will find document with name of love and replace entire document with price
 db.wands.update(
 {name: "Love"},
 {price: 9.99})
+
