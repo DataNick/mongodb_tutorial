@@ -11,8 +11,18 @@ db.wands.insert(
 
 db.wands.remove({name: "Love"})
 
-#update fields
+#update fields for first matching document
 
 db.wands.update(
 query parameter,
-update parameter (begin with a $))
+update parameter (begin with a $)
+)
+
+db.wands.update(
+{name: "Love"},
+"$set": {price: 9.99})
+
+#will find document with name of love and replace entire document with price
+db.wands.update(
+{name: "Love"},
+{price: 9.99})
