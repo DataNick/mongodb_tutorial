@@ -1,9 +1,18 @@
 use wands #creates a db called wands
+
 db.wands.find() #finds all items in wands database
+
 db.wands.insert(
   { name: "Potion N. 09",
     author: "Lazarus Nimbleton"},
   { name: "Sleepy Time",
     author: "Roland Beschel"}
 ) #inserts objects into database
+
 db.wands.remove({name: "Love"})
+
+#update fields
+
+db.wands.update(
+query parameter,
+update parameter (begin with a $))
