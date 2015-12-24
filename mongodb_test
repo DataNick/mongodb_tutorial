@@ -6,3 +6,4 @@ db.wands.insert(
   { name: "Sleepy Time",
     author: "Roland Beschel"}
 ) #inserts objects into database
+db.wands.remove({name: "Love"})
