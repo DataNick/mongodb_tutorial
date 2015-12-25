@@ -23,6 +23,9 @@ db.wands.update(
 {"$set": {price: 9.99}},
 {"multi": false (by default)})
 
+{"$inc": {"count": 1}}
+{upsert: true}
+
 #to perform multiple updates, include third parameter (options parameter)
 
 #will find document with name of love and replace entire document with price
@@ -30,3 +33,22 @@ db.wands.update(
 {name: "Love"},
 {price: 9.99})
 
+
+#Update operators
+
+$unset operator
+
+db.potions.update(
+{} #selects all documents in potions collection,
+{"$unset": "color": "" #remove colour field},
+{"multi": true}
+)
+
+#rename fields
+
+Use the $rename update operator
+db.potions.update(
+{} #selects all documents in potions collection,
+{"$rename": "score": "grade" #rename field to grade},
+{"multi": true}
+)
