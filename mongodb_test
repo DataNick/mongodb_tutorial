@@ -92,8 +92,8 @@ $mul --> multiplies current field value by a specified value. If empty, inserts 
 
 Arrays are common ways to store data
 $pop --> remove first or last value in array
-$pull --> add values to end of array
-$push
+$push --> add values to end of array
+$pull --> removes all instances of a specified value from an array
 $addToSet --> only adds value if not already present
 
 
