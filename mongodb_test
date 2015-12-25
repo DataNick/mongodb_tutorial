@@ -96,4 +96,7 @@ $push --> add values to end of array
 $pull --> removes all instances of a specified value from an array
 $addToSet --> only adds value if not already present
 
-
+db.potions.update(
+  {"name": "Shrinking"},
+  {"$mul": {"ratings.strength" : 10}} #this will set the strength to 50
+  )
