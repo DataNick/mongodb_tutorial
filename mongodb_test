@@ -100,3 +100,6 @@ db.potions.update(
   {"name": "Shrinking"},
   {"$mul": {"ratings.strength" : 10}} #this will set the strength to 50
   )
+
+#query operators and customizing results
+
