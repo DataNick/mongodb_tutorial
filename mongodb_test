@@ -102,4 +102,11 @@ db.potions.update(
   )
 
 #query operators and customizing results
+#filtering --> passing multiple queries to find method
 
+db.potions.find(
+  {
+  "vendor": "Kettlecooked",
+  "strength": 5
+  }
+)
