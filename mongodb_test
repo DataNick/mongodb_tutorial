@@ -128,3 +128,6 @@ db.potions.find(
 
 $elemMatch
 ensure at least 1 element in an array matches all criteria
+db.potions.find(
+  {"price": {"$elemMatch": {"$gt": 10, "$lt": 20}}}
+)
