@@ -119,5 +119,9 @@ $gte
 $lte
 $ne
 db.potions.find(
-  {"price": {"$lte": 20}}
+  {"price": {"$lt": 20}}
+)
+
+db.potions.find(
+  {"price": {"$gt": 10, "$lt": 20}}
 )
