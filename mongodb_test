@@ -131,3 +131,7 @@ ensure at least 1 element in an array matches all criteria
 db.potions.find(
   {"price": {"$elemMatch": {"$gt": 10, "$lt": 20}}}
 )
+
+arrays act differently with range criteria than normal values
+Running a query on an array -->
+each value in array is checked individually. If at least 1 array value is true for each criteria, the entire document matches.
