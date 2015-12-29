@@ -107,6 +107,14 @@ db.potions.update(
 db.potions.find(
   {
   "vendor": "Kettlecooked",
-  "strength": 5
+  "ratings.strength": 5
   }
 )
+
+#query based on conditions i.e. price less than 20
+comparison query operators
+$gt
+$lt
+$gte
+$lte
+$ne
