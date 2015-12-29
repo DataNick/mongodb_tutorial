@@ -118,3 +118,6 @@ $lt
 $gte
 $lte
 $ne
+db.potions.find(
+  {"price": {"$lte": 20}}
+)
