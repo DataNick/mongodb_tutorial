@@ -137,3 +137,15 @@ Running a query on an array -->
 each value in array is checked individually. If at least 1 array value is true for each criteria, the entire document matches.
 The document will not match if only 1 criteria is met.
 Whenever dealing with ranges in an array, always use an array query operator
+
+db.wands.find(
+  {"maker": {"$ne": "Foxmond"},
+  "level_required": {"$lte": 75},
+  "price": {"$lt": 50},
+  "lengths": {"$elemMatch": {"$gte": 3, "$lte": 4}}
+  }
+)
+
+
+
+
