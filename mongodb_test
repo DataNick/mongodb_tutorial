@@ -146,6 +146,44 @@ db.wands.find(
   }
 )
 
+#projections to select items based on conditions and only return certain fields
+db.potions.find(
+  {"grade": {"$gte": 10}},
+  {"vendor": true, "name": true}
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
