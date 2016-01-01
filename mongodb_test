@@ -163,7 +163,7 @@ db.potions.find(
 db.potions.find().count()
 db.potions.find().sort({"price": 1}) #1 for ascending or -1 for descending
 db.potions.find().limit()
-db.potions.find().skip().limit()
+db.potions.find().skip().limit() #will need to be changed for each page
 
 
 
