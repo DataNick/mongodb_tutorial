@@ -152,7 +152,11 @@ db.potions.find(
   {"vendor": true, "name": true}
 )
 
-
+#return all fields except those set to false
+db.potions.find(
+  {"grade": {"$gte": 10}},
+  {"vendor": false, "name": false}
+)
 
 
 
