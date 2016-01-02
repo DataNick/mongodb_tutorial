@@ -158,6 +158,13 @@ db.potions.find(
   {"vendor": false, "name": false}
 )
 
+db.potions.find(
+  {}, #selects all documents in potions collection
+  {"name": true}
+)
+
+#select all records by using {}
+
 #when running the find method, objects returned are cursor objects
 #run methods on cursor objects
 db.potions.find().count()
