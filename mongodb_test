@@ -175,7 +175,7 @@ db.potions.find().skip().limit() #will need to be changed for each page
 db.wands.find(
   {},
   {"name": true, "powers": true, "_id": false}
-)
+).sort({"price": 1}) #sorting by price in ascending order
 
 
 
