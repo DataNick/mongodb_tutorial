@@ -181,6 +181,9 @@ db.wands.find(
 // How to best model data
 i.e. USERS and their favourite POTIONS
 
+#insertion through an embebbed document
+data integrity - ensuring data is consistent
+
 
 
 
