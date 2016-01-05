@@ -178,6 +178,8 @@ db.wands.find(
 ).sort({"price": 1}) #sorting by price in ascending order
 
 
+// How to best model data
+i.e. USERS and their favourite POTIONS
 
 
 
