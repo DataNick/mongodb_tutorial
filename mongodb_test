@@ -183,6 +183,27 @@ i.e. USERS and their favourite POTIONS
 
 #insertion through an embebbed document
 data integrity - ensuring data is consistent
+instead of embedding vendor information directly into potions document
+create a vendors collection and reference vendor document in each potion document.
+A step in normalizing data.
+Document references are manual - mongodb only sees field value pairs.
+To get vendor document, run query on potion to get vendor_id then run query on vendor with id equal to vendor_id to get document in vendor collection
+
+Embedding vs Referencing
+Embedding allows for one query action
+Atomic writes -> for updating, for example, multiple fields, either all changes would occur on nothing would be updated. Ensures document write completely happens or cancels everything
+
+Referencing requires multiple queries
+Reference documents are independent documents
+Ideal for data that occasionally is used together but sometimes stands alone.
+Only need to update vendor information in one place
+Reduce inconsistencies
+Cannot atomically write to multiple documents
+In RDM, this is called a transaction, which MongoDB does not support by default
+If updating a new potion from a new vendor, if updating the potion is written but the vendor update hits an error, no rollback would occur
+There would be a potion document where the vendor is non-existent. When trying to use vendor_id, an error would occur. However, in the potion document, the reference (vendor_id) would exist on a non-existent vendor --> PROBLEMS
+
+
 
 
 
