@@ -203,6 +203,13 @@ In RDM, this is called a transaction, which MongoDB does not support by default
 If updating a new potion from a new vendor, if updating the potion is written but the vendor update hits an error, no rollback would occur
 There would be a potion document where the vendor is non-existent. When trying to use vendor_id, an error would occur. However, in the potion document, the reference (vendor_id) would exist on a non-existent vendor --> PROBLEMS
 
+foreign_key_id is a referenced object
+placing an object directly inside of another document is an embedded document
+
+Embedded modelling is great for getting all the required data in one query, supporting atomic writes and ideal for data that is strongly related
+
+Reference modelling doesn't have default atomic writes across multiple documents and should be used carefully.
+
 
 
 
