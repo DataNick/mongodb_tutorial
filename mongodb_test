@@ -207,8 +207,16 @@ foreign_key_id is a referenced object
 placing an object directly inside of another document is an embedded document
 
 Embedded modelling is great for getting all the required data in one query, supporting atomic writes and ideal for data that is strongly related
+Embedded documents are referenced through their parent
 
 Reference modelling doesn't have default atomic writes across multiple documents and should be used carefully.
+Documents exist independently
+
+One-To-Many Relationship
+How to add commenting to potions for reviews
+Potions will have many Comments and each comment will belong to Users
+
+
 
 
 
