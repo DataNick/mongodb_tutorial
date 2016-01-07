@@ -226,6 +226,16 @@ Questions to decide on Embedding or Referencing Documents
   c) Over 1000 -> Referenced
 
   If the size is too big and data is embedded, there may be a decline in read performance
+  If comments on the potions page is below 100, it's enough to use embedding
+  If the comments grow to be more substantial that embedding is too inefficient, time to fix how you are modelling the data
+
+3. Will the data change often?
+  Embedding data can lead to duplication
+  a) If the data never changes -> Embedded (data duplication is ok if not expected to change)
+  b) If changes occasionally -> Embedded or Referenced (Want overhead of managing data duplication?)
+  c) If data is constantly changing -> Referenced
+
+
 
 
 
