@@ -233,7 +233,23 @@ Questions to decide on Embedding or Referencing Documents
   Embedding data can lead to duplication
   a) If the data never changes -> Embedded (data duplication is ok if not expected to change)
   b) If changes occasionally -> Embedded or Referenced (Want overhead of managing data duplication?)
-  c) If data is constantly changing -> Referenced
+  c) If data is constantly changing -> Referenced (prevents inconsistencies)
+
+Comments on Potions are not expected to change often so alright to store them as embedded documents
+
+Comments belong to Users. Users may change certain attributes about themselves regularly.
+Comments have foreign key id for their users.
+
+Store comments as embedded documents in potions.
+  Don't change often
+  Use both documents together often
+  There will be less than 100 comments per potions
+
+Store Users and foreign key (by reference) in Comments
+  Only need username for each comment
+  Embedding user documents could lead to duplication issues
+
+
 
 
 
