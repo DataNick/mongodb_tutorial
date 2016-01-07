@@ -216,6 +216,10 @@ One-To-Many Relationship
 How to add commenting to potions for reviews
 Potions will have many Comments and each comment will belong to Users
 
+Questions to decide on Embedding or Referencing Documents
+1. How will data be used
+  Used together (embedded) which will be faster or used separately or rarely (referenced)
+
 
 
 
