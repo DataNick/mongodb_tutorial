@@ -206,11 +206,14 @@ There would be a potion document where the vendor is non-existent. When trying t
 foreign_key_id is a referenced object
 placing an object directly inside of another document is an embedded document
 
-Embedded modelling is great for getting all the required data in one query, supporting atomic writes and ideal for data that is strongly related
+Embedded modeling is great for getting all the required data in one query, supporting atomic writes and ideal for data that is strongly related
 Embedded documents are referenced through their parent
+Considering embedding is usually best starting point
 
-Reference modelling doesn't have default atomic writes across multiple documents and should be used carefully.
+Reference modeling doesn't have default atomic writes across multiple documents and should be used carefully.
 Documents exist independently
+
+Complex relationships call for relational databases
 
 One-To-Many Relationship
 How to add commenting to potions for reviews
@@ -227,7 +230,7 @@ Questions to decide on Embedding or Referencing Documents
 
   If the size is too big and data is embedded, there may be a decline in read performance
   If comments on the potions page is below 100, it's enough to use embedding
-  If the comments grow to be more substantial that embedding is too inefficient, time to fix how you are modelling the data
+  If the comments grow to be more substantial that embedding is too inefficient, time to fix how you are modeling the data
 
 3. Will the data change often?
   Embedding data can lead to duplication
@@ -249,6 +252,13 @@ Store Users and foreign key (by reference) in Comments
   Only need username for each comment
   Embedding user documents could lead to duplication issues
 
+// Common Aggregations
+Finding number of potions per vendor
+db.potions.find({}, {"name": true, "vendor": true})
+This would manually pull all the data and count everything
+
+Let MongoDB handle everything because it comes with aggregation framework
+This allows for the manipulation of data BEFORE retrieval
 
 
 
