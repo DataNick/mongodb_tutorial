@@ -259,7 +259,13 @@ This would manually pull all the data and count everything
 
 Let MongoDB handle everything because it comes with aggregation framework
 This allows for the manipulation of data BEFORE retrieval
-
+#aggregate =  combining data
+db.potions.aggregate(
+  [{"$group": {"_id": "$vendor_id"}}]
+)
+set _id to field name we want to group by
+#takes an array as parameter; stage operators (stage operators start with $ sign) as parameters
+# field names that begin with '$' are called field paths and link to a field in a document
 
 
 
