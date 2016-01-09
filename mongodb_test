@@ -267,6 +267,9 @@ set _id to field name we want to group by
 #takes an array as parameter; stage operators (stage operators start with $ sign) as parameters
 # field names that begin with '$' are called field paths and link to a field in a document
 
+#fields beginning with "$" will perform some task like grouping or summing
+#values beginning with "$", then it is a field path that is pointing to the value of specified field
+
 
 
 
