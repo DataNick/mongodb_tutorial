@@ -334,6 +334,7 @@ Top 3 potions with price less than $15
 
 db.potions.aggregate([
   {"$match": {"price": {"$lt": 15}}},
+  {"$project": {"_id": false, "vendor_id": true, "grade": true}}, #this will limit the fields we send over
   {"$group":
   {"_id": "$vendor_id", #setting group key to vendor field path
   "avg_grade": {"$avg": "$grade"}}},
