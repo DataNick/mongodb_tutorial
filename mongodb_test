@@ -309,7 +309,7 @@ $match - normal query; only pass documents to next stage if they meet specified 
 db.wands.aggregate([
   {"$match": {"ingredients": "unicorn"}},
   {"$group":
-    {"_id": "$maker",
+    {"_id": "$maker", #groups data by their maker
     "total_wands": {"$sum": 1},
     "max_magic": {"$max": "$damage.magic"},
     "lowest_price": {"$min": "$price"}
@@ -343,7 +343,19 @@ db.potions.aggregate([
 ])
 
 
+db.wands.aggregate([
+  {"$match": {"price": {"$lt": 50}}},
+  {"$group": {"_id": "$maker", "average_magic": {"$avg": "$damage.magic"}}},
+  {"$match": {"average_magic": {"$gt": 40}}}
+])
 
+db.wands.aggregate([
+  {"$match": {"level_required": {"$lte": 5}}},
+  {"$project": {"_id": false, "maker": true, "damage.magic": true}},
+  {"$group": {"_id": "$maker", "max_damage": {$max: "$damage.magic"}}},
+  {"$sort": {"max_damage": -1}},
+  {"$limit": 4}
+])
 
 
 
