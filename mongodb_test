@@ -301,6 +301,17 @@ The Aggregate Method as a Pipeline -->
   Pass data through many stages in order to change it along the way
   Add multiple stage operators for data to pass through
 
+//Stage operators
+$group
+$match
+$sort
+$limit
+$redact
+$project
+$skip
+$unwind
+$out
+$geoNear
 
 
 
