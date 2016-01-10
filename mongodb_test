@@ -326,6 +326,20 @@ $unwind
 $out
 $geoNear
 
+Top 3 potions with price less than $15
+1) Query for potions with price less than $15
+2) Group potions by vendor and average their grades
+3) Sort the results by grade average
+4) Limit results to 3 vendors
+
+db.potions.aggregate([
+  {"$match": {"price": {"$lt": 15}}},
+  {"$group":
+  {"_id": "$vendor_id", #setting group key to vendor field path
+  "avg_grade": {"$avg": "$grade"}}},
+  {"$sort": {"avg_grade": -1}}, #sort from highest to lowest
+  {"$limit": 3}
+])
 
 
 
