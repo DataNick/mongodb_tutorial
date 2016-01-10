@@ -291,7 +291,11 @@ db.wands.aggregate(
   "lowest_price": {"$min": "$price"}}}]
 )
 
-
+//The Aggregation Pipeline
+Conditional vendor information
+1) Query potions
+2) Group by vendor
+3) Sum the number of potions per vendor
 
 
 
