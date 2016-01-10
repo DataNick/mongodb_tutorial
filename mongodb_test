@@ -305,7 +305,18 @@ Each stage modifies the working data set and passes the altered documents to the
 
 //Stage operators
 $group
-$match - normal query; only pass documents to next stage if they meet specified conditions
+$match - normal query; only pass documents to next stage if they meet specified conditions; use $match early to reduce number of documents to run queries on and improve performance; may be used multiple time to continually remove data.
+db.wands.aggregate([
+  {"$match": {"ingredients": "unicorn"}},
+  {"$group":
+    {"_id": "$maker",
+    "total_wands": {"$sum": 1},
+    "max_magic": {"$max": "$damage.magic"},
+    "lowest_price": {"$min": "$price"}
+    }
+  }
+  ]
+)
 $sort
 $limit
 $redact
