@@ -357,7 +357,7 @@ db.wands.aggregate([
   {"$limit": 4}
 ])
 
-
+//what is purpose of $ in var projection = {'comments.$': 1}
 
 
 
