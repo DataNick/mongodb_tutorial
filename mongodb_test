@@ -359,6 +359,33 @@ db.wands.aggregate([
 
 //what is purpose of $ in var projection = {'comments.$': 1}
 
+Mongoid - wrapper around MongoDB; set of features to create similar environment to ActiveRevord
+Model abstractions to documents
+
+Records are in Binary JSON format
+
+BSON
+- increase performance
+- increase data persistence
+- data processed in binary format
+- still JSON
+- each record is an object in an array --> documents in a collection
+
+Documents are NOT schema protected
+
+Collections are similar to tables in SQL/ActiveRecord
+
+In Postgres, arrays hold primitive types
+In MongoDB, arrays contain whole objects (like JSON)
+
+There is no need to normalize
+
+Everything is inmemory before being persisted
+
+MongoDB persists data with little constraints, leading to consistency being compromised
+
+DB is lightweight with a focus on data processing in application rather than database system
+
 
 
 
